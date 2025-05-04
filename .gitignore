@@ -8,3 +8,5 @@ config.py
 */config.py
 jsw_ctec259portfolio_rough.zip
 ./jsw_ctec259portfolio_rough.zip
+./instance/site.db
+instance/site.db
