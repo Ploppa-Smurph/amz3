@@ -1,0 +1,72 @@
+/* _delete_reports.css
+==================================================
+Delete Reports Page Specific Styles for SHV1 STATION IRREGULARITY LOG
+================================================== */
+
+/* Main Container */
+.delete-report-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Page Title */
+.delete-report-container h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+/* Confirmation Message */
+.delete-report-container .lead {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* Password Form */
+.delete-report-container form {
+    margin-top: 1.5rem;
+}
+
+/* Form Group */
+.delete-report-container .form-group {
+    margin-bottom: 1rem;
+}
+
+/* Password Input */
+.delete-report-container input[type="password"] {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Buttons */
+.delete-report-container .btn {
+    display: inline-block;
+    width: auto;
+    margin: 0.5rem;
+}
+
+/* Center Buttons */
+.delete-report-container form {
+    text-align: center;
+}
+
+/* ======================= */
+/* Responsive Adjustments  */
+/* ======================= */
+@media (max-width: 768px) {
+    .delete-report-container {
+        max-width: 90%;
+    }
+
+    .delete-report-container input[type="password"] {
+        max-width: 100%;
+    }
+}

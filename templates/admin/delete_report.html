@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Confirm Report Deletion{% endblock %}
+{% block content %}
+<div class="container py-4">
+  <h1 class="mb-4 text-center">Confirm Deletion</h1>
+  <p class="lead">Are you sure you want to delete the report titled "<strong>{{ report.title or "Untitled" }}</strong>"?</p>
+  <form method="post">
+    <div class="form-group">
+      <label for="password">Enter your password to confirm deletion:</label>
+      <input type="password" name="password" id="password" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-danger">Delete Report</button>
+    <a href="{{ url_for('reports.manage_reports') }}" class="btn btn-secondary">Cancel</a>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,119 @@
+/* _all_user_reports.css
+==================================================
+All User Reports Page Specific Styles for SHV1 STATION IRREGULARITY LOG
+================================================== */
+
+/* Main Container for All User Reports */
+.all-user-reports-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  /* Page Title */
+  .all-user-reports-container h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: var(--primary-color);
+  }
+  
+  /* ======================= */
+  /* Grouping by Day/Month   */
+  /* ======================= */
+  
+  /* Each Day Group Container */
+  .day-group {
+    margin-bottom: 2rem;
+  }
+  
+  /* Header for Each Day (displays day/month, most recent first) */
+  .day-group .day-header {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 0.75rem 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+  
+  /* ======================= */
+  /* Group Card for Reports  */
+  /* ======================= */
+  
+  /* Overall Group Card to enclose the list of reports for a day */
+  .group-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* List of Reports in the Group */
+  .group-card .report-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Individual Report List Item */
+  .group-card .report-list li {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Remove border from the last item */
+  .group-card .report-list li:last-child {
+    border-bottom: none;
+  }
+  
+  /* Report Item Details */
+  .report-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Report Title */
+  .report-details .report-item-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+  }
+  
+  /* Report Timestamp */
+  .report-details .report-item-timestamp {
+    font-size: 0.875rem;
+    color: #666;
+  }
+  
+  /* Report Notes Preview (if applicable) */
+  .report-details .report-item-notes {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #333;
+  }
+  
+  /* View Report Button */
+  .group-card .report-view-btn {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  /* ======================= */
+  /* Responsive Adjustments  */
+  /* ======================= */
+  @media (max-width: 768px) {
+    .group-card .report-list li {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .group-card .report-view-btn {
+      margin-top: 0.5rem;
+    }
+  }

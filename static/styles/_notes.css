@@ -1,0 +1,165 @@
+
+/* ===============================================
+Notes & Related Styles for SHV1 STATION IRREGULARITY LOG
+================================================== */
+
+/* ------------------------------
+   Station Notes Styles
+------------------------------ */
+.station-notes {
+  background-color: #fcfcfc;
+  border: 1px solid #ddd;
+  padding: 1.5rem;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+}
+
+.station-notes h3 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  font-size: 1.75rem;
+}
+
+.station-notes ul {
+  list-style: none;
+  padding: 0;
+}
+
+.station-notes ul li {
+  padding-left: 1.2rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.station-notes ul li:before {
+  content: "\2022";
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* ------------------------------
+ Note Card Styles
+------------------------------ */
+.note-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.note-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.note-card .note-header {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.note-card .note-body {
+  padding: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+.note-card .note-footer {
+  padding: 0.5rem 1rem;
+  border-top: 1px solid #ddd;
+  text-align: right;
+  background-color: #f7f7f7;
+}
+
+/* ------------------------------
+ Additional Styles for SHV1 Station Integration
+------------------------------ */
+
+/* Global container max-width for consistency */
+.container {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+/* Style for the new note form section.
+ (Ensure you add id="new-note-form" to the form or its container in your HTML.) */
+#new-note-form,
+.new-note-form {
+  background-color: #f8f9fa;
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Enhanced reply link styling */
+.reply-link {
+  color: var(--secondary-color);
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.reply-link:hover {
+  color: var(--primary-color);
+  transform: scale(1.05);
+}
+
+/* Style for nested reply notes (if you decide to wrap replies with an extra class e.g., "nested-reply") */
+.note-card .nested-reply {
+  background-color: #f9f9f9;
+  border-left: 3px solid var(--secondary-color);
+  margin: 10px 0;
+  padding-left: 10px;
+}
+
+/* Customized badge styling for tags to align with project design */
+.badge {
+  font-weight: 600;
+  padding: 0.5em 0.7em;
+  border-radius: 0.5em;
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+/* Global card header styling for consistency across SHV1 modules */
+.card-header {
+  background-color: var(--primary-color) !important;
+  color: #fff !important;
+  font-weight: bold;
+}
+
+/* Form fields focus effect (if not globally defined) */
+input, .form-control, textarea {
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+input:focus, .form-control:focus, textarea:focus {
+  border-color: var(--primary-color);
+}
+
+/* ------------------------------
+ Responsive Styles
+------------------------------ */
+@media (max-width: 576px) {
+  .station-notes {
+      padding: 1rem;
+  }
+  
+  .station-notes h3 {
+      font-size: 1.5rem;
+  }
+  
+  .note-card .note-body {
+      padding: 0.8rem;
+      font-size: 0.9rem;
+  }
+}

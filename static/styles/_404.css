@@ -1,0 +1,55 @@
+/* _404.css */
+
+/* Overall page container: centers the error card and applies the blue gradient background */
+.shv1-error-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 92vh;
+  padding: 1.5rem;
+  background: linear-gradient(180deg, #146eb4, #232f3e); /* Matches your login gradient */
+}
+
+/* Error container: a neat, slightly translucent card that lets the gradient peek through */
+.shv1-error-container {
+  background: rgba(255, 255, 255, 0.95); /* Slight transparency for a modern look */
+  padding: 40px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+}
+
+/* Header styling for the error title */
+.shv1-error-container h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #333333;
+}
+
+/* Paragraph styling with a friendly, inviting tone */
+.shv1-error-container p {
+  margin-bottom: 30px;
+  font-size: 1.125rem;
+  color: #666666;
+}
+
+/* Enhanced button styling: Uses a vibrant gradient and subtle scaling on hover */
+.shv1-error-container a.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(90deg, #ff9800, #f57c00); /* A vivid orange gradient for contrast */
+  color: #ffffff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Button hover effect: Darkens the gradient and slightly enlarges the button */
+.shv1-error-container a.btn:hover {
+  background: linear-gradient(90deg, #e68900, #d86600);
+  transform: scale(1.05);
+}

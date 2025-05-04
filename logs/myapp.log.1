@@ -1,0 +1,145 @@
+2025-05-02 07:14:21,337 ERROR: Exception on /reports/manage [GET] [in D:\courses\amz2\venv\Lib\site-packages\flask\app.py:875]
+Traceback (most recent call last):
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\courses\amz2\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\courses\amz2\app\blueprints\reports\admin_routes.py", line 42, in manage_reports
+    return render_template("admin/manage_reports.html", reports=reports)
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "D:\courses\amz2\venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\courses\amz2\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\courses\amz2\venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "D:\courses\amz2\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: admin/manage_reports.html
+2025-05-02 07:15:58,024 ERROR: Exception on /reports/manage [GET] [in D:\courses\amz2\venv\Lib\site-packages\flask\app.py:875]
+Traceback (most recent call last):
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\courses\amz2\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\courses\amz2\app\blueprints\reports\admin_routes.py", line 42, in manage_reports
+    return render_template("admin/manage_reports.html", reports=reports)
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+  File "D:\courses\amz2\venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\courses\amz2\venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "D:\courses\amz2\templates\admin\manage_reports.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "D:\courses\amz2\templates\base.html", line 52, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^
+  File "D:\courses\amz2\templates\admin\manage_reports.html", line 7, in block 'content'
+    {{ form.hidden_tag() }}
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\courses\amz2\venv\Lib\site-packages\jinja2\environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'form' is undefined
+2025-05-02 07:16:17,617 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-05-02 07:16:17,630 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-05-02 07:16:37,644 ERROR: Exception on /reports/manage [GET] [in D:\courses\amz2\venv\Lib\site-packages\flask\app.py:875]
+Traceback (most recent call last):
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\courses\amz2\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\courses\amz2\app\blueprints\reports\admin_routes.py", line 42, in manage_reports
+    return render_template("admin/manage_reports.html", reports=reports)
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+  File "D:\courses\amz2\venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\courses\amz2\venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "D:\courses\amz2\templates\admin\manage_reports.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "D:\courses\amz2\templates\base.html", line 52, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^
+  File "D:\courses\amz2\templates\admin\manage_reports.html", line 7, in block 'content'
+    {{ form.hidden_tag() }}
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\courses\amz2\venv\Lib\site-packages\jinja2\environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'form' is undefined
+2025-05-02 07:24:22,663 ERROR: Exception on /reports/manage [GET] [in D:\courses\amz2\venv\Lib\site-packages\flask\app.py:875]
+Traceback (most recent call last):
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\courses\amz2\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\courses\amz2\app\blueprints\reports\admin_routes.py", line 42, in manage_reports
+    return render_template("admin/manage_reports.html", reports=reports)
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+  File "D:\courses\amz2\venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\courses\amz2\venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "D:\courses\amz2\templates\admin\manage_reports.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "D:\courses\amz2\templates\base.html", line 52, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^
+  File "D:\courses\amz2\templates\admin\manage_reports.html", line 7, in block 'content'
+    <table class="table table-striped">
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\courses\amz2\venv\Lib\site-packages\jinja2\environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'form' is undefined

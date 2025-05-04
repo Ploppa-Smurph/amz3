@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Create New User | SHV1 STATION IRREGULARITY LOG{% endblock %}
+
+{% block content %}
+<div class="create-user-container">
+  <div class="create-user-card">
+      <h2>Create New User</h2>
+      <form method="post" novalidate>
+          {{ form.hidden_tag() }}
+          <div class="form-group">
+              {{ form.username.label }}
+              {{ form.username(class="form-control") }}
+          </div>
+          <div class="form-group">
+              {{ form.email.label }}
+              {{ form.email(class="form-control") }}
+          </div>
+          <div class="form-group">
+              {{ form.role.label }}
+              {{ form.role(class="form-control") }}
+          </div>
+          <div class="form-group">
+              {{ form.temp_password.label }}
+              {{ form.temp_password(class="form-control") }}
+          </div>
+          <div class="form-group">
+              {{ form.confirm_temp_password.label }}
+              {{ form.confirm_temp_password(class="form-control") }}
+          </div>
+          <div class="form-group">
+              <button type="submit" class="btn btn-primary">Create User</button>
+          </div>
+      </form>
+  </div>
+</div>
+{% endblock %}

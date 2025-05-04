@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% block title %}ABOUT | SHV1 STATION IRREGULARITY LOG{% endblock %}
+
+{% block content %}
+<div class="container about-page">
+
+  <!-- Side-by-Side Container -->
+  <div class="about-content-container">
+    <!-- Business Letter Section -->
+    <section class="business-letter">
+      <h1 class="text-center mb-4">Letter of Concern</h1>
+      <div class="letter-content">
+        <p><strong>Subject:</strong> Concerns Regarding Work Rate Calculation, Station Irregularities, and Performance Evaluation</p>
+        <p>Dear SHV1 ICQA and Facility Management Staff,</p>
+        <p>
+          I am writing to formally express my concerns about the methodology used to calculate work rates, as highlighted in my recent performance review and subsequent retraining. Approximately 1 and a half months ago, I received feedback indicating an average rate of 300 items per shift, which led to my placement on a two‑month probationary period. Since then, I have closely monitored my performance across shifts, consistently averaging between 450 and 500 items.
+        </p>
+        <p>
+          I initially sought clarification on whether my performance report accounted for a situation in which I was simultaneously logged into two stations for an entire day. At the start of one shift, I logged into a station that quickly encountered a conveyance error. I immediately raised an Andon ticket; however, the “Sign out / Sign off” button was greyed out, preventing me from logging out. After several minutes with no resolution, I moved to another station in the same area and worked there for approximately nine hours—while still remaining logged into the initial station. At the end of the shift, I discovered that the original station was still logged in and awaiting RME intervention. This situation raises serious questions regarding the recording of system logins and the accuracy of performance metrics.
+        </p>
+        <p>
+          During my review of recent shifts, I observed significant discrepancies. For instance, on March 30, I was informed of an 800+ item rate during my shift, whereas on March 31, 2025, my rate was reported as only 266 items.
+        </p>
+        <p>
+          On Sunday, March 30, I recall receiving multiple totes during an 8‑hour shift that contained more than 100 items per tote. Specifically, that day I received one tote with over 400 items, another with over 500 items, and a third tote containing 973 items.
+        </p>
+        <p>
+          On March 31, I documented several periods during which no totes arrived at my station. I observed that 85% of the totes received during a four‑hour period contained Andon items such as unscannable barcodes, broken sets, or damaged items. While most totes holding countable items contained fewer than five items, none of the totes on that day held more than 30–40 items. Additionally, many of the totes had Andon issues and contained only a small number of countable items. Some delay intervals spanned up to two minutes before a new tote arrived. These observations suggest that the current performance algorithm may not accurately reflect the actual work performed.
+        </p>
+        <p>
+          I have discussed these issues with members of ICQA management, including Edgar Hichez (former Manager), Jorge Sosa (former PA), Mark Warner (current Manager), Derrick Mullford (current PA), as well as other Management and Associates. Although I was reassured that my record would be adjusted within two months, I remain concerned that the underlying data collection and reporting practices are flawed. Moreover, I maintain that the performance issues stem from station irregularities and inaccurate rate calculations.
+        </p>
+        <p>
+          I believe that evaluating performance solely on a fixed average rate fails to account for the inherent variability in tote volume and content, potentially leading to inaccurate assessments. A more nuanced approach—perhaps one that considers the percentage of effective work completed—could more accurately reflect the actual workload.
+        </p>
+        <p>
+          I am also concerned about the efficiency and productivity of a cycle counter who spends more than 80% of their time processing Andon items in totes. It may be beneficial to implement additional tote delivery protocols—such as marking totes containing Andon items so that they are not sent to counters—to reduce wasted time, energy, and overall productivity.
+        </p>
+        <p>
+          I have been employed at Amazon for nine months. Approximately six months ago, I compiled observations and presented them to my management team, suggesting that SHV1 would benefit from additional system automations. However, I have not observed any significant improvements that have enhanced machine efficiency.
+        </p>
+        <p>
+          Thank you for your time and attention to this matter. I am eager to collaborate on reviewing these findings and adjusting the evaluation process to ensure a fairer assessment of performance.
+        </p>
+        <p>
+          Sincerely,<br>
+          Jeffrey Walley / dwalleje<br>
+          ICQA<br>
+        </p>
+      </div>
+    </section>
+
+    <!-- Project Documentation Section -->
+    <section class="project-doc">
+      <h1 class="text-center mb-4">About SHV1 STATION IRREGULARITY LOG</h1>
+      <p>
+        <strong>SHV1 STATION IRREGULARITY LOG</strong> is a professional application designed to streamline the documentation and analysis of process issues in corporate environments. Our goal is to provide a clear, accessible, and sophisticated way to capture and analyze issues over time.
+      </p>
+      
+      <h2>Application Features &amp; Tools</h2>
+      <ul>
+        <li><strong>Flask</strong>: Python-based framework used for building the web application.</li>
+        <li><strong>Blueprints</strong>: Modular routing structure for organizing application functionality.</li>
+        <li><strong>Jinja2 Templating</strong>: Dynamic HTML generation using template inheritance.</li>
+        <li><strong>Flask-WTF &amp; CSRF Protection</strong>: For secure form handling and validation.</li>
+        <li><strong>Flask-Login</strong>: Manages user sessions and authentication.</li>
+        <li><strong>Flask-SQLAlchemy</strong>: ORM used for scalable and efficient data management.</li>
+        <li><strong>Flask-Migrate</strong>: Database migrations for evolving schema changes.</li>
+        <li><strong>Bootstrap</strong>: For responsive, modern UI design.</li>
+        <li><strong>REST API Endpoints</strong>: Expose application data (e.g., JSON-formatted reports).</li>
+        <li><strong>Custom CSS</strong>: Tailored visual styling to maintain a consistent brand identity.</li>
+        <li><strong>Text File Logging</strong>: Logging via RotatingFileHandler for monitoring application events.</li>
+        <li><strong>Custom Error Pages</strong>: (e.g., 404-page) for a consistent user experience.</li>
+        <li><strong>External Service Integrations</strong>: Amazon S3 (via <code>public_url</code>) and Mailgun for email notifications.</li>
+        <li><strong>Future Plans Documentation</strong>: Outlining potential conversions to alternative frameworks such as Django or Ruby on Rails.</li>
+      </ul>
+      
+      <h2>Current Application Functionality</h2>
+      <ul>
+        <li>Upload and retrieve detailed issue reports with associated images.</li>
+        <li>Daily grouping of reports for trend analysis.</li>
+        <li>Dynamic filtering and a user-friendly, responsive design.</li>
+        <li>Viewing images in modals upon thumbnail clicks.</li>
+        <li>Secure submission and validation of new issue reports.</li>
+        <li>Effective logging of application events for maintenance and debugging.</li>
+        <li>REST API endpoints for JSON data retrieval.</li>
+        <li>Custom error handling for a polished user experience.</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- Contact Information Section (remains at bottom) -->
+  <section class="contact-info bg-light p-4 rounded shadow-sm mt-5">
+    <h2 class="text-secondary mb-3">Contact Information</h2>
+    <ul class="list-unstyled" style="font-size: 1.1rem;">
+      <li><strong>Name / Username:</strong> Jeffrey Walley / dwalleje</li>
+      <li>
+        <strong>Email:</strong>
+        <a href="mailto:jswalley@rocketmail.com" class="text-decoration-none text-primary">
+          jswalley@rocketmail.com
+        </a>
+      </li>
+      <li>
+        <strong>Phone:</strong>
+        <a href="tel:(225)931-4152" class="text-decoration-none text-primary">
+          (225) 931-4152
+        </a>
+      </li>
+    </ul>
+  </section>
+
+</div>
+{% endblock %}

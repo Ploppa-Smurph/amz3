@@ -1,0 +1,103 @@
+2025-05-01 16:54:05,223 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-05-01 17:00:02,809 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-05-01 17:00:02,821 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-05-01 17:04:23,745 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-05-01 17:04:23,758 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-05-01 17:29:08,997 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-05-01 17:29:09,010 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-05-01 18:16:22,025 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-05-01 18:16:22,037 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-05-01 18:20:26,594 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-05-01 18:20:26,607 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-05-01 18:21:34,737 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-05-01 18:21:34,749 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-05-01 18:30:30,728 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-05-01 18:30:30,741 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-05-01 18:31:09,911 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-05-01 18:31:09,923 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-05-01 20:35:59,455 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-05-01 20:35:59,467 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-05-01 20:59:37,953 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-05-01 20:59:37,966 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-05-01 22:27:01,552 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-05-01 22:27:01,564 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-05-01 22:36:40,309 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-05-01 22:36:40,322 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-05-01 22:37:14,775 ERROR: Exception on /reports/all_user_reports [GET] [in D:\courses\amz2\venv\Lib\site-packages\flask\app.py:875]
+Traceback (most recent call last):
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\courses\amz2\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\courses\amz2\app\blueprints\reports\admin_routes.py", line 28, in all_user_reports
+    return render_template('all_user_reports.html', reports=user_reports)
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+  File "D:\courses\amz2\venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\courses\amz2\venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "D:\courses\amz2\templates\all_user_reports.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "D:\courses\amz2\templates\base.html", line 50, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^
+  File "D:\courses\amz2\templates\all_user_reports.html", line 13, in block 'content'
+    {% set grouped_reports = reports|groupby('formatted_date') %}
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\courses\amz2\venv\Lib\site-packages\jinja2\async_utils.py", line 48, in wrapper
+    return normal_func(*args, **kwargs)
+  File "D:\courses\amz2\venv\Lib\site-packages\jinja2\filters.py", line 1274, in sync_do_groupby
+    for key, values in groupby(sorted(value, key=expr), expr)
+                               ~~~~~~^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'app.models.Report object' has no attribute 'formatted_date'
+2025-05-01 22:37:37,986 ERROR: Exception on /reports/all_user_reports [GET] [in D:\courses\amz2\venv\Lib\site-packages\flask\app.py:875]
+Traceback (most recent call last):
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\courses\amz2\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\courses\amz2\app\blueprints\reports\admin_routes.py", line 28, in all_user_reports
+    return render_template('all_user_reports.html', reports=user_reports)
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+  File "D:\courses\amz2\venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\courses\amz2\venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "D:\courses\amz2\templates\all_user_reports.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "D:\courses\amz2\templates\base.html", line 50, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^
+  File "D:\courses\amz2\templates\all_user_reports.html", line 13, in block 'content'
+    {% for group in grouped_reports %}
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\courses\amz2\venv\Lib\site-packages\jinja2\async_utils.py", line 48, in wrapper
+    return normal_func(*args, **kwargs)
+  File "D:\courses\amz2\venv\Lib\site-packages\jinja2\filters.py", line 1274, in sync_do_groupby
+    for key, values in groupby(sorted(value, key=expr), expr)
+                               ~~~~~~^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'app.models.Report object' has no attribute 'formatted_date'

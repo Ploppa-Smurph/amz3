@@ -1,0 +1,99 @@
+/*================================================
+Styling for User List Page | SHV1 STATION IRREGULARITY LOG
+================================================== */
+
+/* ------------------------------
+   User List Container
+------------------------------ */
+.user-list-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ------------------------------
+   User List Card
+------------------------------ */
+.user-list-card {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.user-list-card h1 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+/* ------------------------------
+   Styled Table
+------------------------------ */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.styled-table thead {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.styled-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.styled-table tbody tr:hover {
+  background-color: #f0f0f0;
+}
+
+/* ------------------------------
+   Edit Button
+------------------------------ */
+.btn-edit {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background-color: var(--accent-color);
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
+.btn-edit:hover {
+  background-color: var(--secondary-color);
+}
+
+/* ------------------------------
+   Back Button
+------------------------------ */
+.back-button {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.btn-back {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  text-transform: uppercase;
+  transition: background 0.2s ease;
+}
+
+.btn-back:hover {
+  background-color: var(--secondary-color);
+}

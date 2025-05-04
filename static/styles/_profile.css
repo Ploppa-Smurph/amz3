@@ -1,0 +1,236 @@
+/* _profile.css
+==================================================
+Refined Styling for SHV1 STATION IRREGULARITY LOG
+================================================== */
+
+/* ------------------------------
+   Overall Profile Container
+------------------------------ */
+.profile-page {
+  background: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 1200px; /* Increased from 900px to widen the reporting area */
+  margin: auto;
+}
+
+/* ------------------------------
+   Profile Header
+------------------------------ */
+.profile-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.profile-header h1 {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.profile-header p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* ------------------------------
+   Admin Options Section
+------------------------------ */
+.admin-options {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.admin-options a.btn {
+  flex-grow: 0; /* Prevents the button from stretching */
+  padding: 0.5rem 1rem; /* Standard button sizing */
+  font-size: 1rem; /* Ensures normal button text size */
+  min-width: auto; /* Removes any unnecessary stretching */
+}
+
+
+/* ------------------------------
+   Profile Details Card
+------------------------------ */
+.profile-details.card {
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-details .card-body {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  text-align: center;
+}
+
+.profile-details h2 {
+  font-size: 1.8rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.profile-details p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  color: #444;
+}
+
+/* ------------------------------
+   Reports Listing Layout - Widened for Three Columns
+------------------------------ */
+.reports-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Forces three columns side by side */
+  gap: 2rem;  /* Increased gap from 1.5rem to 2rem */
+  margin: 2rem auto; /* Centered with extra vertical margin */
+  background: #fcfcfc;
+  padding: 1rem 1.5rem;  /* Extra horizontal padding for breathing space */
+  border-radius: 8px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
+.reports-list h3 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
+
+.user-reports h3 {
+  color: var(--primary-color);
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.manager-reports h3 {
+  color: var(--secondary-color);
+  border-bottom: 3px solid var(--secondary-color);
+}
+
+.admin-reports h3 {
+  color: var(--accent-color);
+  border-bottom: 3px solid var(--accent-color);
+}
+
+/* ------------------------------
+   Report Items Styling - Extra Styling
+------------------------------ */
+.report-item {
+  background: linear-gradient(to bottom, #fafafa, #f5f5f5);
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: background 0.2s ease, transform 0.2s ease;
+  position: relative;
+}
+
+/* Colored accent bars */
+.user-reports .report-item {
+  border-left: 5px solid var(--primary-color);
+}
+.manager-reports .report-item {
+  border-left: 5px solid var(--secondary-color);
+}
+.admin-reports .report-item {
+  border-left: 5px solid var(--accent-color);
+}
+
+.report-item:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.02);
+}
+
+.report-item .report-info {
+  flex: 1;
+}
+
+.report-item .report-info p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Increased specificity for the View/Add Notes button */
+.profile-page .report-item .report-action a.btn {
+  font-size: 0.75rem !important;  /* Reduced font-size */
+  padding: 0.4rem !important;     /* Reduced padding */
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.profile-page .report-item .report-action a.btn:hover {
+  background-color: var(--primary-color) !important;
+  color: #fff !important;
+}
+
+/* Remove any extra margin from the report action container */
+.report-item .report-action {
+  margin: 0;
+}
+
+/* Extra padding for links inside list-group items */
+.profile-page .card-body .list-group-item a {
+  padding: 0.4rem 0.8rem;
+}
+
+/* ------------------------------
+   Bottom Report Buttons Styling - Increased Specificity
+------------------------------ */
+.profile-page .admin-reports .text-center a.btn,
+.profile-page .reports-list .text-center a.btn {
+  border-radius: 4px;
+  padding: 0.5rem 0.8rem;  /* Reduced padding */
+  font-weight: bold;
+  margin: 0 0.5rem;  /* Added horizontal margin between buttons */
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.profile-page .admin-reports .text-center a.btn:hover,
+.profile-page .reports-list .text-center a.btn:hover {
+  transform: scale(1.03);
+}
+
+/* ------------------------------
+   Responsive Adjustments
+------------------------------ */
+@media (max-width: 768px) {
+  .profile-header h1 {
+    font-size: 2rem;
+  }
+
+  .profile-header p {
+    font-size: 1rem;
+  }
+
+  .profile-details .card-body {
+    padding: 1rem;
+  }
+
+  .reports-list h3 {
+    font-size: 1.3rem;
+  }
+  
+  /* For narrower screens, allow two columns */
+  .reports-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .report-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .report-item .report-action {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}

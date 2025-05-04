@@ -1,0 +1,128 @@
+/* ------------------------------
+   Hero Section - Further Reduced
+------------------------------ */
+.hero {
+  background: var(--primary-color); /* Amazon blue (primary) */
+  border-radius: 0 0 8px 8px; /* Rounded corners at the bottom */
+  color: #fff;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;  /* Reduced from 3.5rem */
+  margin-bottom: 0.75rem;  /* Slightly reduced margin */
+  font-weight: bold;
+}
+
+.hero p.lead {
+  font-size: 1.2rem;  /* Reduced from 1.5rem */
+  margin-bottom: 1.5rem;  /* Reduced margin */
+}
+
+.hero a.btn {
+  font-size: 1rem;  /* Reduced from 1.25rem */
+  padding: 0.5rem 1rem;  /* Reduced button padding */
+}
+
+/* ------------------------------
+Features Section - Further Reduced
+------------------------------ */
+.features {
+  background: #fafafa; /* Light gray background for separation */
+  padding: 1.5rem 0;
+}
+
+.features .feature-box {
+  padding: 0.5rem;  /* Reduced from 1rem to 0.5rem */
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: #fff;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  margin-bottom: 0.5rem;  /* Reduced margin for a more compact layout */
+}
+
+.features .feature-box:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+/* ------------------------------
+About Application Section - Further Reduced
+------------------------------ */
+.about-app {
+  padding: 7.25rem 0;
+  background: linear-gradient(180deg, #146eb4, #232f3e); /* Gradient background */
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  color: var(--text-color-light); /* Light text for contrast */
+}
+
+.about-app img.img-fluid {
+  max-height: 200px;  /* Reduced from 400px to 200px */
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure headings, paragraphs, and lists inherit the light text color */
+.about-app h2,
+.about-app p,
+.about-app ul {
+  color: var(--text-color-light);
+}
+
+.about-app h2 {
+  margin-bottom: 1rem;  /* Reduced margin */
+  font-size: 1.5rem;    /* Reduced from 2rem */
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.about-app p {
+  font-size: 1rem;  /* Reduced from 1.125rem */
+  margin-bottom: 0.75rem;  /* Reduced margin */
+  line-height: 1.4;  /* Slightly tighter line-height */
+}
+
+.about-app ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.about-app ul li {
+  position: relative;
+  padding-left: 1rem;  /* Reduced from 1.5rem */
+  margin-bottom: 0.5rem;  /* Reduced margin */
+  font-size: 1rem;  /* Reduced from 1.125rem */
+}
+
+.about-app ul li::before {
+  content: "\2022"; /* Unicode bullet */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--secondary-color);
+  font-size: 1rem;  /* Reduced from 1.2rem */
+  line-height: 1;
+}
+
+.about-app a.btn {
+  margin-top: 1rem;
+  background-color: var(--secondary-color);
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;  /* Reduced from 0.7rem 1.2rem */
+  border-radius: 4px;
+  font-size: 0.9rem;  /* Reduced font-size */
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-app a.btn:hover {
+  background-color: #e68a00; /* Slightly darker orange */
+  transform: scale(1.05) translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}

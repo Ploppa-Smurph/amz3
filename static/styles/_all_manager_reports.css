@@ -1,0 +1,108 @@
+/* _all_manager_reports.css
+==================================================
+All Manager Reports Page Specific Styles for SHV1 STATION IRREGULARITY LOG
+================================================== */
+
+/* Main Container for All Manager Reports */
+.all-manager-reports-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 120px 1rem 1rem; /* Added 120px top padding to avoid the nav bar */
+}
+
+/* Page Title */
+.all-manager-reports-container h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+/* ----------------------------------------------------------------
+   Override Bootstrap Card Styles for Report Grouping
+---------------------------------------------------------------- */
+/* Use a clean background, border, and shadow similar to user reports */
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+/* Card Header as the Day Group Header */
+.card-header {
+  background-color: var(--secondary-color);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 4px 4px 0 0;
+  margin-bottom: 0;
+}
+
+/* ----------------------------------------------------------------
+   List Group Styles for Reports within Each Group
+---------------------------------------------------------------- */
+.list-group {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list-group-item {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Remove bottom border from last item */
+.list-group-item:last-child {
+  border-bottom: none;
+}
+
+/* Report Details within List Items */
+.report-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.report-details .report-item-title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.report-details .report-item-timestamp {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.report-details .report-item-notes {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* View Report Button */
+.report-view-btn {
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+}
+
+/* ----------------------------------------------------------------
+   Responsive Adjustments for Manager Reports
+---------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .list-group-item {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  
+  .list-group-item .btn {
+      margin-top: 0.5rem;
+  }
+}

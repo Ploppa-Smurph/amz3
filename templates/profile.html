@@ -1,0 +1,209 @@
+{% extends "base.html" %}
+{% block title %}Profile | SHV1 STATION IRREGULARITY LOG{% endblock %}
+
+{% block content %}
+<div class="container profile-page py-4">
+  <!-- Profile Header -->
+  <div class="profile-header text-center mb-4">
+    <h1>Welcome, {{ user.username }}!</h1>
+    <p class="text-muted">
+      Your permissions are:
+      {% if user.role == 'admin' %}
+        Admin
+      {% elif user.role == 'manager' %}
+        Manager
+      {% else %}
+        User
+      {% endif %}
+    </p>
+  </div>
+
+  {% if user.role == 'admin' %}
+    <!-- Admin Options Section -->
+    <div class="admin-options mb-4 text-center">
+      <a href="{{ url_for('auth.create_user') }}" class="btn btn-success">
+        Create New User
+      </a>
+      <a href="{{ url_for('auth.user_list') }}" class="btn btn-info">
+        View / Edit User Permissions
+      </a>
+    </div>
+
+    <!-- Admin Reports Section with Grid Layout -->
+    <div class="admin-reports">
+      <h3 class="text-center">Reports by Role</h3>
+      <div class="text-center mb-3">
+        <a href="{{ url_for('reports.new_report') }}" class="btn btn-success">
+          Create New Report
+        </a>
+        <a href="{{ url_for('reports.manage_reports') }}" class="btn btn-warning ml-2">
+          Manage Reports
+        </a>
+    
+      </div>
+      <div class="reports-wrapper">
+        {% for role, authors in admin_grouped_reports.items() %}
+          <div class="admin-report-section">
+            <div class="card mb-4">
+              <div class="card-header">
+                <h4>{{ role|capitalize }} Reports</h4>
+              </div>
+              <div class="card-body">
+                {% if authors %}
+                  <ul class="list-group">
+                    {% for author, dates in authors.items() %}
+                      <li class="list-group-item">
+                        <strong>{{ author }}</strong>
+                        <ul class="mt-2 list-unstyled">
+                          {% for d in dates %}
+                            <li class="d-flex justify-content-between align-items-center">
+                              <a href="{{ url_for('reports.day_reports', report_date=d.strftime('%Y-%m-%d'), author=author) }}">
+                                {{ d.strftime('%Y-%m-%d') }}
+                              </a>
+                              <a href="{{ url_for('reports.day_reports', report_date=d.strftime('%Y-%m-%d'), author=author, notes='true') }}" class="btn btn-sm btn-info">
+                                View/Add Notes
+                              </a>
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% else %}
+                  <p>No reports found for role {{ role }}.</p>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <!-- Export Button for Admin Reports -->
+      <div class="text-center mt-3">
+        <a href="{{ url_for('reports.export_reports') }}" class="btn btn-info">
+          Export Reports as CSV
+        </a>
+      </div>
+      <!-- Extra Buttons for All Reports -->
+      <div class="text-center mt-3">
+        <a href="{{ url_for('reports.all_manager_reports') }}" class="btn btn-warning mr-2">
+          View All Manager Reports
+        </a>
+        <a href="{{ url_for('reports.all_user_reports') }}" class="btn btn-warning">
+          View All User Reports
+        </a>
+      </div>
+    </div>
+
+  {% elif user.role == 'manager' %}
+    <!-- Manager Profile Details -->
+    <div class="profile-details card shadow-sm mb-4">
+      <div class="card-body text-center">
+        <h2>Profile Details</h2>
+        <p><strong>Username:</strong> {{ user.username }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        {% set total_reports = 0 %}
+        {% for author, dates in reports_by_author.items() %}
+          {% set total_reports = total_reports + dates|length %}
+        {% endfor %}
+        <p><strong>Total Reports:</strong> {{ total_reports }}</p>
+        {% set total_authors = reports_by_author|length %}
+        <p><strong>Total Report Authors:</strong> {{ total_authors }}</p>
+        <a href="{{ url_for('reports.new_report') }}" class="btn btn-success btn-lg mt-3">
+          Create New Report
+        </a>
+      </div>
+    </div>
+
+    <!-- Manager Reports Listing by Author with Grid Layout -->
+    <div class="reports-list">
+      <h3 class="text-center">Reports by Author</h3>
+      <div class="reports-wrapper">
+        {% if reports_by_author %}
+          {% for author, dates in reports_by_author.items() %}
+            <div class="manager-report-section">
+              <div class="card mb-4">
+                <div class="card-header">
+                  <strong>{{ author }}</strong>
+                </div>
+                <div class="card-body">
+                  <ul class="list-group">
+                    {% for d in dates %}
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <a href="{{ url_for('reports.day_reports', report_date=d.strftime('%Y-%m-%d'), author=author) }}">
+                          {{ d.strftime('%Y-%m-%d') }}
+                        </a>
+                        <a href="{{ url_for('reports.day_reports', report_date=d.strftime('%Y-%m-%d'), author=author, notes='true') }}" class="btn btn-sm btn-info">
+                          View/Add Notes
+                        </a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          <p class="text-center">No reports found.</p>
+        {% endif %}
+      </div>
+      <!-- Export Button for Manager Reports -->
+      <div class="text-center mt-3">
+        <a href="{{ url_for('reports.export_reports') }}" class="btn btn-info">
+          Export Reports as CSV
+        </a>
+      </div>
+      <!-- Extra Button for Viewing All User Reports -->
+      <div class="text-center mt-3">
+        <a href="{{ url_for('reports.all_user_reports') }}" class="btn btn-warning">
+          View All User Reports
+        </a>
+      </div>
+    </div>
+
+  {% else %}
+    <!-- Regular User Profile Details -->
+    <div class="profile-details card shadow-sm mb-4">
+      <div class="card-body text-center">
+        <h2>Profile Details</h2>
+        <p><strong>Username:</strong> {{ user.username }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        {% set total_reports = 0 %}
+        {% for count in day_counts.values() %}
+          {% set total_reports = total_reports + count %}
+        {% endfor %}
+        <p><strong>Total Reports:</strong> {{ total_reports }}</p>
+        <p><strong>Total Report Days:</strong> {{ sorted_days|length }}</p>
+        <a href="{{ url_for('reports.new_report') }}" class="btn btn-success btn-lg mt-3">
+          Create New Report
+        </a>
+      </div>
+    </div>
+
+    <!-- Regular User Reports Listing with Grid Layout -->
+    <div class="reports-list">
+      <h3 class="text-center">Reports by Day</h3>
+      <div class="reports-wrapper">
+        {% if sorted_days %}
+          {% for day in sorted_days %}
+            <div class="user-report-section">
+              <div class="card mb-4">
+                <div class="card-body d-flex justify-content-between align-items-center">
+                  <a href="{{ url_for('reports.day_reports', report_date=day.strftime('%Y-%m-%d')) }}">
+                    {{ day.strftime('%Y-%m-%d') }}
+                  </a>
+                  <a href="{{ url_for('reports.day_reports', report_date=day.strftime('%Y-%m-%d'), notes='true') }}" class="btn btn-sm btn-info">
+                    View/Add Notes
+                  </a>
+                  <span class="badge badge-primary badge-pill">{{ day_counts[day] }}</span>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          <p class="text-center">No reports found.</p>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

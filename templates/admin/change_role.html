@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Change Role | SHV1 STATION IRREGULARITY LOG{% endblock %}
+
+{% block content %}
+<div class="change-role-container">
+  <div class="change-role-card">
+      <h2>Change Role for {{ user.username }}</h2>
+      <form method="POST">
+          {{ form.hidden_tag() }}
+          <div class="form-group">
+              {{ form.role.label }}
+              {{ form.role(class="form-control") }}
+          </div>
+          <div class="form-group">
+              {{ form.current_password.label }}
+              {{ form.current_password(class="form-control") }}
+          </div>
+          <div class="form-group">
+              <button type="submit" class="btn btn-primary">Confirm Role Change</button>
+          </div>
+      </form>
+  </div>
+</div>
+{% endblock %}

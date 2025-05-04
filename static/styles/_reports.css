@@ -1,0 +1,128 @@
+/* _reports.css
+==================================================
+Reports Page Specific Styles for SHV1 STATION IRREGULARITY LOG
+================================================== */
+
+/* ---------------------------------------------------------
+   Wider Container for Daily Reports (Full-Width)
+--------------------------------------------------------- */
+.daily-reports-container {
+  width: 100%;
+  /* Remove strict max-width on mobile and apply small horizontal padding */
+  padding: 120px 1rem 1rem;  /* Added top padding (120px) to push content below the nav bar */
+}
+
+/* ---------------------------------------------------------
+   Increase Container Width for Larger Screens
+--------------------------------------------------------- */
+@media (min-width: 1200px) {
+  .daily-reports-container {
+    max-width: 1600px;  /* Set a wider max-width */
+    margin: 0 auto;     /* Center it horizontally */
+    padding: 120px 2rem 1rem;  /* Ensure top padding carries over (adjust as needed) */
+  }
+}
+
+/* ---------------------------------------------------------
+   Grid Layout for Report Previews
+--------------------------------------------------------- */
+.image-grid,
+.image-grid.preview {
+  display: grid;
+  gap: 1rem;
+  /* Default: 2 items per row for mobile devices */
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* ---------------------------------------------------------
+   Media Query for larger screens: 5 items per row
+--------------------------------------------------------- */
+@media (min-width: 992px) {
+  .image-grid,
+  .image-grid.preview {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* ---------------------------------------------------------
+   Individual Report Card Styles
+--------------------------------------------------------- */
+.image-item {
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: visible;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.image-item:hover {
+  transform: translateY(-5px);
+}
+
+/* ---------------------------------------------------------
+   Image Wrapper & Image
+--------------------------------------------------------- */
+.image-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  position: relative;
+}
+
+.image-wrapper img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------------------------------------------------------
+   Caption for Report Thumbnails
+--------------------------------------------------------- */
+.image-item .caption {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 5px;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.caption .title {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.caption .exif-date {
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+/* ---------------------------------------------------------
+   Day Group Divider
+--------------------------------------------------------- */
+.day-group {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+/* ---------------------------------------------------------
+   Pagination or Additional Report Navigation
+--------------------------------------------------------- */
+.pagination {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* ---------------------------------------------------------
+   (Optional) Button override for "View All Reports" links
+--------------------------------------------------------- */
+.day-group > div a.btn {
+  margin-top: 0.5rem;
+  align-self: flex-end;
+}

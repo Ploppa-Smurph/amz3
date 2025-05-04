@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}All User Reports{% endblock %}
+
+{% block content %}
+<div class="container py-4 all-user-reports-container">
+  <h1 class="mb-4 text-center">All User Reports</h1>
+  
+  {# Group the reports by display_date (which is a date object) #}
+  {% set grouped_reports = reports|groupby('display_date') %}
+  
+  {% if grouped_reports %}
+    {% for group in grouped_reports %}
+      <div class="day-group">
+        <div class="day-header">{{ group.grouper.strftime('%Y-%m-%d') }}</div>
+        <div class="group-card">
+          <ul class="report-list">
+            {% for report in group.list %}
+              <li>
+                <div class="report-details">
+                  <span class="report-item-title">{{ report.title }}</span>
+                  <span class="report-item-timestamp">
+                    on {{ (report.exif_datetime or report.date_posted).strftime('%Y-%m-%d %H:%M') }}
+                  </span>
+                  {% if report.notes %}
+                    <p class="report-item-notes">{{ report.notes|truncate(100) }}</p>
+                  {% endif %}
+                </div>
+                <a href="{{ url_for('reports.view_report', report_id=report.id) }}" class="btn btn-sm btn-primary report-view-btn">
+                  View Report
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p class="text-center">No reports found.</p>
+  {% endif %}
+  
+  <!-- Navigation Section -->
+  <div class="text-center mt-4">
+    <a href="javascript:history.back()" class="btn btn-secondary mx-2">
+      Return to Previous Page
+    </a>
+    <a href="{{ url_for('auth.profile') }}" class="btn btn-secondary mx-2">
+      Return to Profile
+    </a>
+    <a href="{{ url_for('reports.export_reports') }}" class="btn btn-info mx-2">
+      Export User Reports as CSV
+    </a>
+  </div>
+</div>
+{% endblock %}

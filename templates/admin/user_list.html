@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}User List | SHV1 STATION IRREGULARITY LOG{% endblock %}
+
+{% block content %}
+<div class="user-list-container">
+  <div class="user-list-card">
+      <h1>User List</h1>
+      <table class="styled-table">
+          <thead>
+              <tr>
+                  <th>User Name</th>
+                  <th>Email</th>
+                  <th>Permission Level</th>
+                  <th>Total Reports</th>
+                  <th>Edit Permissions</th>
+              </tr>
+          </thead>
+          <tbody>
+              {% for user in users %}
+              <tr>
+                  <td>{{ user.username }}</td>
+                  <td>{{ user.email }}</td>
+                  <td>{{ user.role|capitalize }}</td>
+                  <td>{{ user.reports|length if user.reports else 0 }}</td>
+                  <td>
+                      {% if current_user.role == 'admin' %}
+                      <a href="{{ url_for('auth.change_role', user_id=user.id) }}" class="btn-edit">Edit</a>
+                      {% endif %}
+                  </td>
+              </tr>
+              {% endfor %}
+          </tbody>
+      </table>
+      <div class="back-button">
+          <a href="{{ url_for('auth.profile') }}" class="btn-back">Back to Profile</a>
+      </div>
+  </div>
+</div>
+{% endblock %}

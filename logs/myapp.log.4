@@ -1,0 +1,121 @@
+2025-04-29 23:55:07,062 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-04-29 23:55:07,088 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-04-30 07:57:57,808 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-04-30 07:57:57,822 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-04-30 08:12:19,418 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-04-30 08:12:19,431 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-04-30 08:23:19,759 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-04-30 08:23:19,772 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-04-30 09:50:30,104 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-04-30 09:50:30,117 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-04-30 10:13:09,514 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-04-30 10:13:09,526 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-04-30 10:21:49,266 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-04-30 10:21:49,279 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-04-30 10:34:11,645 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-04-30 10:34:11,657 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-04-30 10:43:42,017 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-04-30 10:43:42,029 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-04-30 10:51:38,333 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-04-30 10:51:38,345 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-04-30 10:57:01,806 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-04-30 10:57:01,818 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-04-30 11:09:16,287 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-04-30 11:09:16,299 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-04-30 11:09:27,354 ERROR: Exception on /auth/profile [GET] [in D:\courses\amz2\venv\Lib\site-packages\flask\app.py:875]
+Traceback (most recent call last):
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\courses\amz2\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\courses\amz2\app\blueprints\auth\profile_routes.py", line 18, in profile
+    return render_template("profile.html", user=current_user, admin_grouped_reports=admin_grouped)
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+  File "D:\courses\amz2\venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\courses\amz2\venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "D:\courses\amz2\templates\profile.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "D:\courses\amz2\templates\base.html", line 43, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^
+  File "D:\courses\amz2\templates\profile.html", line 34, in block 'content'
+    <p><strong>Total Report Authors:</strong> {{ reports_by_author.keys()|length }}</p>
+    ^^^^^^^^^^^^^^^
+  File "D:\courses\amz2\venv\Lib\site-packages\jinja2\environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'reports_by_author' is undefined
+2025-04-30 11:09:42,207 ERROR: Exception on /auth/profile [GET] [in D:\courses\amz2\venv\Lib\site-packages\flask\app.py:875]
+Traceback (most recent call last):
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\courses\amz2\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\courses\amz2\app\blueprints\auth\profile_routes.py", line 18, in profile
+    return render_template("profile.html", user=current_user, admin_grouped_reports=admin_grouped)
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "D:\courses\amz2\venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+  File "D:\courses\amz2\venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\courses\amz2\venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "D:\courses\amz2\templates\profile.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "D:\courses\amz2\templates\base.html", line 43, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^
+  File "D:\courses\amz2\templates\profile.html", line 34, in block 'content'
+    <!-- Admin Reports Section -->
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\courses\amz2\venv\Lib\site-packages\jinja2\environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'reports_by_author' is undefined
+2025-04-30 11:09:54,219 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-04-30 11:09:54,231 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-04-30 11:15:38,648 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-04-30 11:15:38,661 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-04-30 11:20:54,489 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-04-30 11:20:54,502 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-04-30 12:06:38,658 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-04-30 12:06:38,670 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-04-30 12:16:17,420 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-04-30 12:16:17,433 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-04-30 12:24:39,051 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-04-30 12:24:39,064 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-04-30 13:22:31,187 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-04-30 13:22:31,199 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-04-30 13:49:28,867 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-04-30 13:49:28,879 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-05-01 15:50:05,800 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-05-01 15:50:05,814 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-05-01 16:29:22,153 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-05-01 16:29:22,165 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-05-01 16:31:27,584 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-05-01 16:31:27,597 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-05-01 16:52:29,072 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]
+2025-05-01 16:52:29,088 INFO: Admin user 'admin' already exists with proper permissions. [in D:\courses\amz2\app\__init__.py:151]
+2025-05-01 16:54:05,211 INFO: MyApp startup [in D:\courses\amz2\app\__init__.py:114]

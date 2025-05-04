@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Edit Report{% endblock %}
+{% block content %}
+<div class="container py-4">
+  <h1>Edit Report</h1>
+  <form method="post" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    
+    <div class="form-group">
+      {{ form.title.label }}
+      {{ form.title(class="form-control") }}
+      {% for error in form.title.errors %}
+        <div class="text-danger">{{ error }}</div>
+      {% endfor %}
+    </div>
+    
+    <div class="form-group">
+      {{ form.image.label }}
+      {{ form.image(class="form-control") }}
+      {% for error in form.image.errors %}
+        <div class="text-danger">{{ error }}</div>
+      {% endfor %}
+    </div>
+    
+    <div class="form-group">
+      {{ form.notes.label }}
+      {{ form.notes(class="form-control") }}
+      {% for error in form.notes.errors %}
+        <div class="text-danger">{{ error }}</div>
+      {% endfor %}
+    </div>
+
+    <button type="submit" class="btn btn-primary">{{ form.submit.label.text or "Update Report" }}</button>
+  </form>
+  <br>
+  <a href="{{ url_for('reports.manage_reports') }}" class="btn btn-secondary">Back to Manage Reports</a>
+</div>
+{% endblock %}
