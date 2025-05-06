@@ -36,7 +36,15 @@ def get_engine_url():
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-config.set_main_option('sqlalchemy.url', get_engine_url())
+
+# --- MODIFICATION HERE ---
+effective_db_url = get_engine_url()
+config.set_main_option('sqlalchemy.url', effective_db_url)
+
+# --- ADD THIS DEBUG PRINT LINE ---
+print(f"DEBUG [env.py]: Alembic globally configured with sqlalchemy.url: {effective_db_url}")
+# -----------------------------
+
 target_db = current_app.extensions['migrate'].db
 
 # other values from the config, defined by the needs of env.py,
@@ -63,7 +71,10 @@ def run_migrations_offline():
     script output.
 
     """
+    # This 'url' will be the one set by config.set_main_option above
     url = config.get_main_option("sqlalchemy.url")
+    # You could add another print here if you wanted to be extra sure for offline mode
+    # print(f"DEBUG [env.py run_migrations_offline]: Using URL: {url}")
     context.configure(
         url=url, target_metadata=get_metadata(), literal_binds=True
     )
@@ -93,8 +104,11 @@ def run_migrations_online():
     conf_args = current_app.extensions['migrate'].configure_args
     if conf_args.get("process_revision_directives") is None:
         conf_args["process_revision_directives"] = process_revision_directives
-
-    connectable = get_engine()
+    
+    # The engine obtained here will use the 'sqlalchemy.url' set above
+    connectable = get_engine() 
+    # You could also print connectable.url here for further debugging if needed:
+    # print(f"DEBUG [env.py run_migrations_online]: Engine URL: {connectable.url}")
 
     with connectable.connect() as connection:
         context.configure(
