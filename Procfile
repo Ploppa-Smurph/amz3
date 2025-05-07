@@ -1,1 +1,1 @@
-web: gunicorn --bind 0.0.0.0:8080 wsgi:app --workers 1 --log-level debug --access-logfile - --error-logfile - --enable-stdio-inheritance
+web: echo "WEB PROCESS IS STARTING" && sleep 300
