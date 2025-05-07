@@ -1,1 +1,1 @@
-web: echo "WEB PROCESS IS STARTING" && sleep 300
+web: gunicorn --bind 0.0.0.0:$PORT wsgi:app
